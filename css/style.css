@@ -9,9 +9,9 @@
 html,
 body {
     font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
-    color: #776e65;
+    color: #8A2BE2; /* Deep purple for text contrast */
     font-size: 18px;
-    background: rgba(238, 228, 218, 0.5);
+    background: rgba(230, 230, 250, 0.5); /* Very light lavender background */
     overflow: hidden;
     height: 100%;
 }
@@ -47,6 +47,7 @@ h1.title {
     font-size: 74px;
     line-height: 66px;
     font-weight: bold;
+    color: #9370DB; /* Medium purple */
 }
 
 .scores-container {
@@ -57,7 +58,7 @@ h1.title {
 .best-container {
     float: left;
     padding: 3px 20px;
-    background: #bbada0;
+    background: #7B68EE; /* Soft purple-blue */
     border-radius: 3px;
     font-size: 25px;
     font-weight: bold;
@@ -74,7 +75,7 @@ h1.title {
 .score-container .title,
 .best-container .title {
     font-size: 13px;
-    color: #eee4da;
+    color: #E6E6FA; /* Light lavender for contrast */
 }
 
 .score-addition {
@@ -94,13 +95,14 @@ h1.title {
 
 .above-game {
     font-size: 0.9rem;
+    color: #9370DB; /* Medium purple */
 }
 
 .restart-btn {
     margin: 5px 0 0 5px;
     float: right;
     padding: 0 8px;
-    background: #8f7a66;
+    background: #6A5ACD; /* Bright purple */
     color: white;
     height: 40px;
     line-height: 40px;
@@ -110,6 +112,7 @@ h1.title {
 
 h2.subtitle {
     font-size: 1em;
+    color: #7B68EE; /* Soft purple-blue */
 }
 
 .game-container {
@@ -117,7 +120,7 @@ h2.subtitle {
     margin-top: 15px;
     width: 450px;
     height: 450px;
-    background: #bbada0;
+    background: #D8BFD8; /* Light pastel purple */
     border-radius: 6px;
     touch-action: none;
 }
@@ -134,7 +137,6 @@ h2.subtitle {
     width: 426px;
     height: 426px;
 }
-
 
 .grid-row {
     display: flex;
@@ -154,7 +156,7 @@ h2.subtitle {
 
 .grid-cell {
     margin-right: 2%;
-    background: rgba(238, 228, 218, 0.35);
+    background: rgba(230, 230, 250, 0.5); /* Light lavender for subtle background */
 }
 
 .grid-cell:nth-of-type(4n) {
@@ -168,80 +170,55 @@ h2.subtitle {
     justify-content: center;
     font-size: 53px;
     font-weight: bold;
-    background: #eee4da;
+    background: #B39DDB; /* Light purple */
+    color: #f9f6f2;
     transition: all 0.15s ease;
 }
 
-.tile.new-tile {
-    animation: 0.5s appear;
-}
-
-.tile.addition {
-    animation: 0.3s add;
-}
-
-.tile[data-val] {
+.tile[data-val="4"] {
+    background: #9370DB; /* Medium purple */
     color: #f9f6f2;
 }
 
-.tile[data-val="2"],
-.tile[data-val="4"] {
-    color: #776e65;
-}
-
-.tile[data-val="128"],
-.tile[data-val="256"],
-.tile[data-val="512"] {
-    font-size: 45px;
-}
-
-.tile[data-val="1024"],
-.tile[data-val="2048"] {
-    font-size: 33px;
-}
-
-.tile[data-val="4"] {
-    background: #ede0c8;
-}
-
 .tile[data-val="8"] {
-    background: #f2b179;
+    background: #87CEFA; /* Light blue */
+    color: #f9f6f2;
 }
 
 .tile[data-val="16"] {
-    background: #f59563;
+    background: #ADD8E6; /* Pastel blue */
+    color: #f9f6f2;
 }
 
 .tile[data-val="32"] {
-    background: #f67c5f;
+    background: #FFB6C1; /* Light pastel pink */
+    color: white;
 }
 
 .tile[data-val="64"] {
-    background: #f65e3b;
+    background: #FF69B4; /* Bright pink for contrast */
+    color: white;
 }
 
 .tile[data-val="128"] {
-    background: #edcf72;
+    background: #BA68C8; /* Medium pink-purple */
+    color: white;
 }
 
 .tile[data-val="256"] {
-    background: #edcc61;
-    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.31746), inset 0 0 0 1px rgba(255, 255, 255, 0.19048);
+    background: #AB47BC; /* Darker purple */
 }
 
 .tile[data-val="512"] {
-    background: #edc850;
-    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.39683), inset 0 0 0 1px rgba(255, 255, 255, 0.2381);
+    background: #7B68EE; /* Soft purple-blue */
 }
 
 .tile[data-val="1024"] {
-    background: #edc53f;
-    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.47619), inset 0 0 0 1px rgba(255, 255, 255, 0.28571);
+    background: #42A5F5; /* Bright blue */
 }
 
 .tile[data-val="2048"] {
-    background: #edc22e;
-    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.55556), inset 0 0 0 1px rgba(255, 255, 255, 0.33333);
+    background: #8A2BE2; /* Dark purple for high contrast */
 }
 
 .pop-container {
@@ -251,69 +228,16 @@ h2.subtitle {
     justify-content: center;
     width: 100%;
     height: 100%;
-    background: rgba(238, 228, 218, 0.8);
+    background: rgba(255, 228, 225, 0.8); /* Light pink overlay */
     z-index: 100;
     opacity: 0;
     transition: all 1s ease;
 }
 
-.winning-container p:nth-child(1){
-    transform: rotate(90deg);
-}
-
-.winning-container.action p:nth-child(1){
-    transform-origin: center;
-    animation: winning 1.5s infinite;
-}
-
-.failure-container.action p:nth-child(1){
-    transform-origin: center;
-    animation: failure 5s infinite;
-}
-
-@keyframes winning{
-    0%,25%,50%,75%,100%{
-		transform: rotate(90deg) translateX(-5px);
-	}
-	12.5%{
-		transform: rotate(80deg);
-	}
-	37.5%{
-		transform: rotate(70deg);
-	}
-	62.5%{
-		transform: rotate(100deg);
-	}
-	87.5%{
-		transform: rotate(120deg);
-	}
-}
-
-@keyframes failure{
-    0%,25%,50%,75%,100%{
-		transform: rotate(90deg) scale(0.7,1) rotateX(40deg);
-	}
-	12.5%{
-		transform: rotate(90deg);
-	}
-	37.5%{
-		transform: rotate(90deg);
-	}
-	62.5%{
-		transform: rotate(90deg);
-	}
-	87.5%{
-		transform: rotate(90deg);
-	}
-}
-
-.pop-container.action {
-    opacity: 1;
-}
-
 .pop-container p {
     font-size: 60px;
     font-weight: bold;
+    color: #FF69B4; /* Bright pink for contrast */
 }
 
 .footer {
@@ -324,6 +248,6 @@ h2.subtitle {
     justify-content: space-around;
     align-items: flex-end;
     font-size: 0.75rem;
-    color: #333;
+    color: #8A2BE2; /* Deep purple for contrast */
     opacity: 0.7;
 }
