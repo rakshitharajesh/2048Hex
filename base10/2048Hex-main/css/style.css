@@ -1,0 +1,253 @@
+@import "../font/clear-sans.css";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+    color: #8A2BE2; /* Deep purple for text contrast */
+    font-size: 18px;
+    background: rgba(230, 230, 250, 0.5); /* Very light lavender background */
+    overflow: hidden;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: 100vh;
+    box-sizing: content-box;
+}
+
+.heading {
+    margin: 20px 0;
+}
+
+.heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+h1.title {
+    font-size: 74px;
+    line-height: 66px;
+    font-weight: bold;
+    color: #9370DB; /* Medium purple */
+}
+
+.scores-container {
+    float: right;
+}
+
+.score-container,
+.best-container {
+    float: left;
+    padding: 3px 20px;
+    background: #7B68EE; /* Soft purple-blue */
+    border-radius: 3px;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.score-container {
+    position: relative;
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+.score-container .title,
+.best-container .title {
+    font-size: 13px;
+    color: #E6E6FA; /* Light lavender for contrast */
+}
+
+.score-addition {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: rgba(119, 110, 101, 0.9);
+    z-index: 100;
+    opacity: 0;
+    font-size: 1rem;
+}
+
+.score-addition.action {
+    animation: 2s moveup;
+}
+
+.above-game {
+    font-size: 0.9rem;
+    color: #9370DB; /* Medium purple */
+}
+
+.restart-btn {
+    margin: 5px 0 0 5px;
+    float: right;
+    padding: 0 8px;
+    background: #6A5ACD; /* Bright purple */
+    color: white;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+h2.subtitle {
+    font-size: 1em;
+    color: #7B68EE; /* Soft purple-blue */
+}
+
+.game-container {
+    position: relative;
+    margin-top: 15px;
+    width: 450px;
+    height: 450px;
+    background: #D8BFD8; /* Light pastel purple */
+    border-radius: 6px;
+    touch-action: none;
+}
+
+.grid-container,
+.tile-container,
+.pop-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 426px;
+    height: 426px;
+}
+
+.grid-row {
+    display: flex;
+    margin-bottom: 2%;
+}
+
+.grid-row,
+.tile {
+    height: 23.5%;
+}
+
+.grid-cell,
+.tile {
+    width: 23.5%;
+    border-radius: 3px;
+}
+
+.grid-cell {
+    margin-right: 2%;
+    background: rgba(230, 230, 250, 0.5); /* Light lavender for subtle background */
+}
+
+.grid-cell:nth-of-type(4n) {
+    margin-right: 0;
+}
+
+.tile {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 53px;
+    font-weight: bold;
+    background: #B39DDB; /* Light purple */
+    color: #f9f6f2;
+    transition: all 0.15s ease;
+}
+
+.tile[data-val="4"] {
+    background: #9370DB; /* Medium purple */
+    color: #f9f6f2;
+}
+
+.tile[data-val="8"] {
+    background: #87CEFA; /* Light blue */
+    color: #f9f6f2;
+}
+
+.tile[data-val="16"] {
+    background: #ADD8E6; /* Pastel blue */
+    color: #f9f6f2;
+}
+
+.tile[data-val="32"] {
+    background: #FFB6C1; /* Light pastel pink */
+    color: white;
+}
+
+.tile[data-val="64"] {
+    background: #FF69B4; /* Bright pink for contrast */
+    color: white;
+}
+
+.tile[data-val="128"] {
+    background: #BA68C8; /* Medium pink-purple */
+    color: white;
+}
+
+.tile[data-val="256"] {
+    background: #AB47BC; /* Darker purple */
+}
+
+.tile[data-val="512"] {
+    background: #7B68EE; /* Soft purple-blue */
+}
+
+.tile[data-val="1024"] {
+    background: #42A5F5; /* Bright blue */
+}
+
+.tile[data-val="2048"] {
+    background: #8A2BE2; /* Dark purple for high contrast */
+}
+
+.pop-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 228, 225, 0.8); /* Light pink overlay */
+    z-index: 100;
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.pop-container p {
+    font-size: 60px;
+    font-weight: bold;
+    color: #FF69B4; /* Bright pink for contrast */
+}
+
+.footer {
+    flex: 1;
+    padding: 10px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    font-size: 0.75rem;
+    color: #8A2BE2; /* Deep purple for contrast */
+    opacity: 0.7;
+}
